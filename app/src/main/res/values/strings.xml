@@ -114,4 +114,6 @@
         "when a user tries to pick up one of cards.\n\n"
     </string>
     <string name="title_activity_playlist">PlaylistActivity</string>
+    <string name="eeg_data">EEG data</string>
+    <string name="start_recording">Start Recording</string>
 </resources>

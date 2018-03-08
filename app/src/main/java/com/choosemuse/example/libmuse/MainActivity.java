@@ -258,17 +258,17 @@ public class MainActivity extends Activity implements OnClickListener {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
                 Map<String, Object> databaseMap = (Map<String, Object>) dataSnapshot.getValue();
-                Log.d("DATABASE", databaseMap.toString());
-                for (Map.Entry<String, Object> entry : databaseMap.entrySet()) {
-                    List<String> songList = new ArrayList<>();
-                    for (Map.Entry<String, Map<String, String>> songEntry : ((Map<String, Map<String, String>>) entry.getValue()).entrySet()) {
-                        String link = songEntry.getValue().get("link");
+//                Log.d("DATABASE", databaseMap.toString());
+//                for (Map.Entry<String, Object> entry : databaseMap.entrySet()) {
+//                    List<String> songList = new ArrayList<>();
+//                    for (Map.Entry<String, Map<String, String>> songEntry : ((Map<String, Map<String, String>>) entry.getValue()).entrySet()) {
+//                        String link = songEntry.getValue().get("link");
 //                        Log.d("DATABASE", link);
-                        songList.add(link);
-                    }
-                    songMap.put(entry.getKey(), songList);
-                }
-                Log.d("DATABASE", songMap.toString());
+//                        songList.add(link);
+//                    }
+//                    songMap.put(entry.getKey(), songList);
+//                }
+//                Log.d("DATABASE", songMap.toString());
             }
 
             @Override

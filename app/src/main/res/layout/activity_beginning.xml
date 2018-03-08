@@ -5,13 +5,14 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="com.choosemuse.example.libmuse.BeginningActivity">
+
     <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="EEG data"
-        tools:layout_editor_absoluteY="0dp"
+        android:layout_width="70dp"
+        android:layout_height="24dp"
+        android:text="@string/eeg_data"
+        tools:ignore="MissingConstraints"
         tools:layout_editor_absoluteX="0dp"
-        tools:ignore="MissingConstraints" />
+        tools:layout_editor_absoluteY="0dp" />
 
 
 </android.support.constraint.ConstraintLayout>
