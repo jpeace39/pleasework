@@ -751,9 +751,9 @@ public class MainActivity extends Activity implements OnClickListener {
                     Intent songIntent = new Intent(Intent.ACTION_VIEW);
                     songIntent.setData(Uri.parse(url));
                     startActivity(songIntent);
-//                    playingMusic = true;
-                } else if (false) {
-//                    playingMusic = true;
+                    playingMusic = true;
+                } else if (stopTime - beginTime >= 25000) {
+                    playingMusic = true;
                     TextView mood = (TextView) findViewById(R.id.mood);
                     mood.setText("You are feeling happy");
                     Intent songIntent = new Intent(android.content.Intent.ACTION_VIEW);
