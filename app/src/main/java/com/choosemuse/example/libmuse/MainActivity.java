@@ -257,8 +257,8 @@ public class MainActivity extends Activity implements OnClickListener {
         myRef.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
-                Map<String, Object> databaseMap = (Map<String, Object>) dataSnapshot.getValue();
-//                Log.d("DATABASE", databaseMap.toString());
+//                Map<String, Object> databaseMap = (Map<String, Object>) dataSnapshot.getValue();
+////                Log.d("DATABASE", databaseMap.toString());
 //                for (Map.Entry<String, Object> entry : databaseMap.entrySet()) {
 //                    List<String> songList = new ArrayList<>();
 //                    for (Map.Entry<String, Map<String, String>> songEntry : ((Map<String, Map<String, String>>) entry.getValue()).entrySet()) {
@@ -373,7 +373,7 @@ public class MainActivity extends Activity implements OnClickListener {
 
     private String getSong(String key) {
         int index = (int) (Math.random() * songMap.get(key).size());
-        return songMap.get(key).get(index);
+        return "https://open.spotify.com/track/" + songMap.get(key).get(index);
     }
 
     protected void onPause() {
@@ -728,6 +728,9 @@ public class MainActivity extends Activity implements OnClickListener {
 
 
     private boolean playingMusic = false;
+
+
+
     /**
      * The following runnable deals with updating the mood
      */
@@ -738,7 +741,6 @@ public class MainActivity extends Activity implements OnClickListener {
             avgBetaLong = avgBetaLong / NUM_OF_TIMES;
             eegLeft = eegLeft / NUM_OF_TIMES;
             eegRight = eegRight / NUM_OF_TIMES;
-
             //ImageView background = (ImageView) findViewById(R.id.background_img);
             if (!playingMusic) {
                 stopTime = System.currentTimeMillis();
@@ -749,12 +751,13 @@ public class MainActivity extends Activity implements OnClickListener {
                     Intent songIntent = new Intent(Intent.ACTION_VIEW);
                     songIntent.setData(Uri.parse(url));
                     startActivity(songIntent);
-                    playingMusic = true;
-                } else if (stopTime - beginTime >= 25000) {
-                    playingMusic = true;
+//                    playingMusic = true;
+                } else if (false) {
+//                    playingMusic = true;
                     TextView mood = (TextView) findViewById(R.id.mood);
                     mood.setText("You are feeling happy");
-                    Intent songIntent = new Intent(Intent.ACTION_VIEW);
+                    Intent songIntent = new Intent(android.content.Intent.ACTION_VIEW);
+                    System.out.println(getSong("happy"));
                     songIntent.setData(Uri.parse(getSong("happy")));
                     startActivity(songIntent);
                 }
